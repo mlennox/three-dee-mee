@@ -1,0 +1,23 @@
+{
+  "name": "three-dee-mee",
+  "version": "1.0.0",
+  "description": "view 3d meshes",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlennox/three-dee-mee.git"
+  },
+  "author": "Mark Lennox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mlennox/three-dee-mee/issues"
+  },
+  "homepage": "https://github.com/mlennox/three-dee-mee#readme",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "three": "^0.108.0"
+  }
+}
