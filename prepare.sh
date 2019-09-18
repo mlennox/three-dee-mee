@@ -1,1 +1,1 @@
-cp -r node_modules/three/build/ src/
+cp -r node_modules/three/* src/three
