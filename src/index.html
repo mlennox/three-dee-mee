@@ -44,7 +44,7 @@
 			function init() {
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0x203040 );
-				// scene.fog = new THREE.FogExp2( 0xffee00, 0.002 );
+				// scene.fog = new THREE.FogExp2( 0xffee00, 0.0001 );
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
@@ -66,8 +66,12 @@
         // instantiate the loader
         var loader = new OBJLoader2();
 
+        // var faceMaterial = new THREE.MeshLambertMaterial( { flatShading: true } );
+
+        // loader.setMaterials(faceMaterial);
+
         // load a resource from provided URL synchronously
-        loader.load( 'objs/confused.obj', 
+        loader.load( 'objs/excited.obj', 
           (object) => {
 
             scene.add( object );
@@ -98,7 +102,7 @@
 
         // world
 				var geometry = new THREE.CylinderBufferGeometry( 0, 10, 30, 4, 1 );
-				var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
+				var material = new THREE.MeshPhongMaterial( { color: 0xffee00, flatShading: true } );
 				for ( var i = 0; i < 500; i ++ ) {
 					var mesh = new THREE.Mesh( geometry, material );
 					mesh.position.x = Math.random() * 1600 - 800;
@@ -117,7 +121,7 @@
 				var light = new THREE.DirectionalLight( 0x002288 );
 				light.position.set( - 1, - 1, - 1 );
 				scene.add( light );
-				var light = new THREE.AmbientLight( 0x222222 );
+				var light = new THREE.AmbientLight( 0xa0a0a0 );
 				scene.add( light );
 				//
 				window.addEventListener( 'resize', onWindowResize, false );
