@@ -1,1 +1,2 @@
-cp -r node_modules/three/* src/three
+npm install
+cp -Rf node_modules/three/ src/three
