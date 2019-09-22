@@ -77,15 +77,15 @@ world.prototype.createCamera = function () {
 }
 
 world.prototype.createLights = function () {
-  var light = new THREE.AmbientLight(0x303030);
+  var light = new THREE.AmbientLight(0x808080);
   this.lights.push(light);
 
-  light = new THREE.DirectionalLight(0xffffff);
-  light.position.set(1, 1, 1);
+  light = new THREE.DirectionalLight(0xbb8020);
+  light.position.set(2, -1, 2);
   this.lights.push(light);
 
-  // light = new THREE.DirectionalLight(0x300000);
-  // light.position.set(-1, 1, 1);
+  // light = new THREE.DirectionalLight(0x00eeff);
+  // light.position.set(-1, 2, -1);
   // this.lights.push(light);
 
   this.lights.forEach(light => {

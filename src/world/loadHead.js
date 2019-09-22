@@ -4,14 +4,17 @@ import { OBJLoader2 } from '../three/examples/jsm/loaders/OBJLoader2.js';
 export function loadHead({ name = 'excited' }) {
 
   // instantiate the loader
-  var loader = new OBJLoader2();
+  // and remove duplicate indices and compute normals
+  var loader = new OBJLoader2().setUseIndices(true);
 
   // a matt, double-sided surface
-  var faceMaterial = new THREE.MeshBasicMaterial({
-    flatShading: true,
+  var faceMaterial = new THREE.MeshLambertMaterial({
+    // flatShading: true,
+    // reflectivity: 0,
     vertexColors: THREE.VertexColors,
     shadowSide: THREE.DoubleSide,
     side: THREE.DoubleSide,
+    // shading: THREE.SmoothShading
   });
 
   return new Promise((resolve, reject) => {

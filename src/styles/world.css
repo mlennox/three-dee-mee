@@ -1,0 +1,10 @@
+#main {
+}
+
+.overlay {
+    position: absolute;
+}
+
+.overlay li {
+    list-style-type: none;
+}
