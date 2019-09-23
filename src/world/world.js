@@ -27,7 +27,12 @@ world.prototype.init = function () {
 
   window.addEventListener('resize', () => this.onWindowResize(), false);
 
-  return this.loadNewHead({ name: 'disgusted' }).then(() => { return this.renderer });
+  return this.loadNewHead({ name: 'disgusted' }).then(() => {
+    return {
+      renderer: this.renderer,
+      loadNewHead: params => this.loadNewHead(params)
+    };
+  });
 };
 
 world.prototype.onWindowResize = function () {
@@ -49,7 +54,13 @@ world.prototype.render = function () {
 
 world.prototype.loadNewHead = function ({ name = 'excited' }) {
   return loadHead({ name }).then(object => {
+    if (this.currentModelName) {
+      var currentModel = this.scene.getObjectByName(this.currentModelName);
+      this.scene.remove(currentModel);
+    }
+
     this.scene.add(object);
+    object.name = name;
     this.currentModelName = object.name;
 
     this.objectReframer.reFrame(object);

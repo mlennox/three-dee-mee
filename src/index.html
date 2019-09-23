@@ -4,17 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script type="module">
-    import { world } from './world/world.js';
-    import {menu} from './world/menu.js'
-     
-    window.addEventListener('load', event => {
-      const renderer = new world().then(renderer => {
-        const container = document.getElementById('main');
-        container.appendChild(renderer.domElement);
-      });
-    });
-  </script>
+  <script type="module" src="world/create.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/world.css" media="screen" />
   <title>Three-dee-mee</title>
   <section id="main">
